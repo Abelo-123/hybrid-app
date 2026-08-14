@@ -3,7 +3,7 @@ import type { TelegramWebApp, TelegramUser } from '../telegram.d';
 // ─── Safe Raw WebApp Accessor (0ms overhead) ────────────────
 export const getTg = (): TelegramWebApp | null => {
   if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
-    return window.Telegram.WebApp;
+    return window.Telegram.WebApp as unknown as TelegramWebApp;
   }
   return null;
 };
